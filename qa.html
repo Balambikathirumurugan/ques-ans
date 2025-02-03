@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: fffee9;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        .faq-container {
+            width: 50%; 
+            
+        }
+        .faq-box {
+            background: white;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            color: #6aaf08;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            color: #333;
+        }
+        .faq-toggle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .divider {
+            display: none; /* Initially hidden */
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-box">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            Do You Accept All Major Credit Cards? 
+            <span class="faq-toggle">+</span>
+        </div>
+        <div class="divider"></div>
+        <div class="faq-answer">
+            Yes, we accept all major credit cards including Visa, MasterCard, and American Express.
+        </div>
+    </div>
+
+    <div class="faq-box">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            Do You Support Local Farmers? 
+            <span class="faq-toggle">+</span>
+        </div>
+        <div class="divider"></div>
+        <div class="faq-answer">
+            Yes, we source our ingredients from local farmers whenever possible.
+        </div>
+    </div>
+
+    <div class="faq-box">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            Do You Use Organic Ingredients? 
+            <span class="faq-toggle">+</span>
+        </div>
+        <div class="divider"></div>
+        <div class="faq-answer">
+            We prioritize using organic ingredients to ensure quality and sustainability.
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleFAQ(element) {
+        let faqBox = element.parentElement; 
+        let divider = faqBox.querySelector('.divider'); 
+        let answer = faqBox.querySelector('.faq-answer'); 
+        let toggle = element.querySelector(".faq-toggle");
+
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+            divider.style.display = "none";
+            toggle.textContent = "+";
+        } else {
+            answer.style.display = "block";
+            divider.style.display = "block";
+            toggle.textContent = "-";
+        }
+    }
+</script>
+
+</body>
+</html>
